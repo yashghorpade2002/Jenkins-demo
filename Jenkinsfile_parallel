@@ -1,0 +1,29 @@
+pipeline{
+    agent any
+    stages {
+        stage("CheckOut"){
+            steps {
+                sh 'echo "checking out the code repo"'
+            }
+        }
+        stage("Build") {
+            steps {
+                sh 'echo "building out the code repo"'
+            }
+        }
+        parallel {
+            stage("unit test") {
+                steps {
+                    sh 'echo "testing out the code repo"'
+                }
+            }
+            stage("Integration test") {
+                steps {
+                    sh 'echo "starting the integration testa"'
+                }
+            }
+        }
+
+    }
+
+}
