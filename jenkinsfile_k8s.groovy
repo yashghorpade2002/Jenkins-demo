@@ -32,8 +32,8 @@ pipeline{
         success{
             echo 'deployment successfull'
         }
-        failuare{
-            echo 'deployment failuare'
+        failure{
+            echo 'deployment failure'
         }
         always{
             echo 'Pipeline finished'
