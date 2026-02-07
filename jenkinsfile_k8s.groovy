@@ -5,7 +5,7 @@ pipeline{
             steps {
                 sh 'echo "checking the minikube status and starting it"'
                 sh 'whoami'
-                sh 'minikube start -- device = docker'
+                sh 'minikube start --device=docker'
             }
         }
         stage('apply deployment') {
@@ -40,10 +40,7 @@ pipeline{
             echo 'Pipeline finished'
         }
         cleanup{
-            steps{
-                sh 'echo "cleaning up the resources"'
-//                sh 'sudo rm -rf /workspace/*'
-            }
+            echo "cleaning up the resources"
         }
     }
 }
