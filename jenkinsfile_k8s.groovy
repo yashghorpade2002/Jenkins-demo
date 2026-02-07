@@ -5,7 +5,7 @@ pipeline{
             steps {
                 sh 'echo "checking the minikube status and starting it"'
                 sh 'whoami'
-                sh 'minikube start --device=docker'
+                sh 'minikube start --driver=docker'
             }
         }
         stage('apply deployment') {
