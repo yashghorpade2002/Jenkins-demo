@@ -10,7 +10,7 @@ pipeline{
         }
         stage('apply deployment') {
             steps {
-                scripts{
+                script {
                     dir("k8s_practice"){
                         sh 'echo "getting the deployment file applied"'
                         sh 'kubectl apply -f deployment.yaml'
@@ -20,7 +20,7 @@ pipeline{
         }
         stage('apply service') {
             steps {
-                scripts {
+                script {
                     dir("k8s_practice") {
                         sh 'echo "getting the service file applied"'
                         sh 'kubectl apply -f service.yaml'
